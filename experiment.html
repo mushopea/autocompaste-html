@@ -6,6 +6,7 @@
     <title>CS4249 Assignment 1</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Work+Sans:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/main.css">
@@ -148,6 +149,17 @@
             trialData.push(headers);
             next();
         })
+        
+        // disables CTRL+C when the technique is ACP.
+        $(document).on('keydown', function ( e ) {
+            var currTechnique = ACPToolKit.getCurrentTrialState().technique;
+            var ctrlCPressed = e.ctrlKey && ( String.fromCharCode(e.which) === 'c' || String.fromCharCode(e.which) === 'C' );
+            var techniqueIsACP = (currTechnique == 'AUTOCOMPASTE');
+            console.log(currTechnique);
+            if (ctrlCPressed && techniqueIsACP) {
+                alert( "Oops! Please use the AutoComPaste technique for this round." );
+            }
+        });
     });
 </script>
 </body>
