@@ -155,7 +155,6 @@
             var currTechnique = ACPToolKit.getCurrentTrialState().technique;
             var ctrlCPressed = e.ctrlKey && ( String.fromCharCode(e.which) === 'c' || String.fromCharCode(e.which) === 'C' );
             var techniqueIsACP = (currTechnique == 'AUTOCOMPASTE');
-            console.log(currTechnique);
             if (ctrlCPressed && techniqueIsACP) {
                 alert( "Oops! Please use the AutoComPaste technique for this round." );
             }

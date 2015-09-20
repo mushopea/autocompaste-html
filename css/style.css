@@ -225,6 +225,7 @@ pre {
   position: absolute;
   transition: all 0.2s;
   display: none;
+  z-index: 2000;
 }
 
 #autocompaste-completion-list {
